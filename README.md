@@ -1,4 +1,4 @@
-# Faniel Yemane
+# fyemane.github.io
 
 <img src="https://user-images.githubusercontent.com/93152842/190920438-42037578-7954-47c2-b4a7-06c0e164539c.png" height = 300> <img src="https://user-images.githubusercontent.com/93152842/190920564-bb5bc9c1-bd90-46dd-b701-a46f12264e2d.png" height = 300>
 

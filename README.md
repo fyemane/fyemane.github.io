@@ -27,3 +27,6 @@ From this folder, run `python -m http.server 8765`, then open `http://localhost:
 ## Updating projects
 
 Edit the project cards in `index.html` and keep team contributions, source links, and project status accurate. Images should have descriptive alternative text. Layout changes can be made in `portfolio.css`.
+
+
+The landing page is About Me (`index.html`). The project gallery is in `projects.html`; `about.html` preserves the earlier About URL. Credential cards link to public issuer verification pages or clearly labelled LinkedIn supporting documents.

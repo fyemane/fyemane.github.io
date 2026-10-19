@@ -12,7 +12,7 @@
   }
   addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); } }, {passive:true});
   addEventListener('resize', updateScroll); updateScroll();
-  const reveals = document.querySelectorAll('.project, .section-heading, .about-story, .interest-grid article');
+  const reveals = document.querySelectorAll('.project, .section-heading, .about-story, .interest-grid article, .career-entry, .qualification-grid article, .leadership-list article, .skills-grid article');
   if (!reduced.matches && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
@@ -26,7 +26,7 @@
     let count = 0;
     document.querySelectorAll('.project[data-category]').forEach(card => {
       const shown = button.dataset.filter === 'all' || card.dataset.category.split(' ').includes(button.dataset.filter);
-      card.hidden = !shown; if (shown) { count++; card.classList.add('visible'); }
+      card.hidden = !shown; if (shown) { count++; card.classList.add('visible'); if (!reduced.matches) { card.classList.remove('filter-enter'); requestAnimationFrame(() => card.classList.add('filter-enter')); } }
     });
     document.querySelector('#filter-status').textContent = `${count} projects shown`;
   }));
@@ -48,6 +48,7 @@
     dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
     dialog.addEventListener('close', () => { document.body.classList.remove('preview-open'); opener?.focus(); });
   }
+  if (!reduced.matches) document.querySelector('.portrait')?.classList.add('photo-enter');
   const hero = document.querySelector('.hero-shell');
   if (hero && matchMedia('(pointer:fine)').matches) hero.addEventListener('pointermove', e => {
     if (reduced.matches) return;
